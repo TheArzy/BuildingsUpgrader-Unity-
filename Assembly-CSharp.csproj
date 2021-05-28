@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B90E9CF2-2AEE-617C-BDDD-03FF5EBFC655}</ProjectGuid>
+    <ProjectGuid>{ED9257F6-1841-12AC-FD0A-C969B4550B48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,10 +59,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BuildingScript.cs" />
     <Compile Include="Assets\Scripts\CellScript.cs" />
     <Compile Include="Assets\Scripts\ButtonActionsScript.cs" />
     <Compile Include="Assets\Scripts\WorldBuilderScript.cs" />
-    <Compile Include="Assets\Scripts\BuildingScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\BrokenVector\LowPolyTreePack\README.txt" />
