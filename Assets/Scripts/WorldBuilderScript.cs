@@ -134,7 +134,7 @@ public class WorldBuilderScript : MonoBehaviour
         // ѕровер€ем делали ли мы уже генерацию и размер пол€ (все случаи кроме 1х1)
         if (start == false && gridHor > 1 || gridVer > 1)
         {
-            // ѕривисываем буферу начальное значение (в основном нужно дл€ начального rotation)
+            // ѕриписываем буферу начальное значение (в основном нужно дл€ начального rotation)
             CellTransBuffer = gameObject.transform;
             // «акрываем главное меню
             CloseMenu();
