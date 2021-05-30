@@ -15,11 +15,19 @@ C:/Users/TheArzy/GitFlowData
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 13795
 Successfully changed project path to: C:/Users/TheArzy/GitFlowData
 C:/Users/TheArzy/GitFlowData
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 63.80 ms, found 1 plugins.
+=======
+13870
+Successfully changed project path to: C:/Users/TheArzy/GitFlowData
+C:/Users/TheArzy/GitFlowData
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 65.54 ms, found 1 plugins.
+>>>>>>> tempbuffer
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -30,11 +38,12 @@ Direct3D:
     Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
     Vendor:   NVIDIA
     VRAM:     2007 MB
-    Driver:   27.21.14.6627
+    Driver:   27.21.14.6647
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56916
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -48,6 +57,21 @@ Mono: successfully reloaded assembly
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
 Registered in 0.001580 seconds.
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001267 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 72.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001507 seconds.
+>>>>>>> tempbuffer
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\TheArzy\GitFlowData\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\TheArzy\GitFlowData\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -55,11 +79,16 @@ Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  0.901 seconds
+=======
+- Completed reload, in  0.929 seconds
+>>>>>>> tempbuffer
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2671 Unused Serialized files (Serialized files now loaded: 0)
@@ -289,4 +318,20 @@ System memory in use after: 137.8 MB.
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3382.
 Total: 1.902900 ms (FindLiveObjects: 0.202400 ms CreateObjectMapping: 0.125000 ms MarkObjects: 1.492900 ms  DeleteObjects: 0.082000 ms)
 
+=======
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2672 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.5 MB.
+System memory in use after: 111.7 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3143.
+Total: 2.220700 ms (FindLiveObjects: 0.254100 ms CreateObjectMapping: 0.264200 ms MarkObjects: 1.589300 ms  DeleteObjects: 0.112300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/BuildingScript.cs
+  artifactKey: Guid(66b991562b5da654f95bbc35266937c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BuildingScript.cs using Guid(66b991562b5da654f95bbc35266937c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c88fc3e1e6aa50722437a1fd27cec440') in 0.317664 seconds 
+>>>>>>> tempbuffer
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
