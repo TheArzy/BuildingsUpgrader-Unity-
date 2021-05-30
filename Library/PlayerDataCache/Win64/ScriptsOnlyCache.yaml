@@ -5,7 +5,7 @@ ScriptsOnlyBuild:
     - ButtonActionsScript
     - CameraMovement
     - CellScript
-    - LookAtme_Script
+    - LookAtMe_Script
     - WorldBuilderScript
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -67,39 +67,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1464}
+      Script: {instanceID: 1758}
     - Class: 114
-      Script: {instanceID: 1742}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 1782}
+      Script: {instanceID: 2432}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2944}
     - Class: 114
-      Script: {instanceID: 3130}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3310}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3450}
     - Class: 114
-      Script: {instanceID: 3786}
+      Script: {instanceID: 3802}
     - Class: 114
-      Script: {instanceID: 3792}
+      Script: {instanceID: 3808}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3948}
     - Class: 114
-      Script: {instanceID: 4074}
+      Script: {instanceID: 4090}
     - Class: 114
-      Script: {instanceID: 4260}
+      Script: {instanceID: 4274}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 5064}
     - Class: 114
-      Script: {instanceID: 5304}
+      Script: {instanceID: 5318}
     - Class: 114
-      Script: {instanceID: 5530}
+      Script: {instanceID: 5544}
     - Class: 114
-      Script: {instanceID: 6362}
+      Script: {instanceID: 5784}
     - Class: 114
-      Script: {instanceID: 26416}
+      Script: {instanceID: 6378}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -127,12 +127,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -285,6 +279,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -393,7 +393,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c0d2546a0665c8a894d4ce950425097a
+      Hash: 6f3f0af51ab38bb6f57b35ddc1bd63cf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraMovement
@@ -801,6 +801,12 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreak2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LookAtMe_Script
+  - hash:
+      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -925,12 +931,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LookAtme_Script
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

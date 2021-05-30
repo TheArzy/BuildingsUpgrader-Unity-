@@ -63,8 +63,8 @@
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CellScript.cs" />
     <Compile Include="Assets\Scripts\ButtonActionsScript.cs" />
-    <Compile Include="Assets\Scripts\WorldBuilderScript.cs" />
     <Compile Include="Assets\Scripts\LookAtMe_Script.cs" />
+    <Compile Include="Assets\Scripts\WorldBuilderScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\BrokenVector\LowPolyTreePack\README.txt" />

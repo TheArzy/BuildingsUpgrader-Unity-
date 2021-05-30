@@ -288,7 +288,7 @@
 "Assets/Scripts/ButtonActionsScript.cs"
 "Assets/Scripts/CameraMovement.cs"
 "Assets/Scripts/CellScript.cs"
-"Assets/Scripts/LookAtme_Script.cs"
+"Assets/Scripts/LookAtMe_Script.cs"
 "Assets/Scripts/WorldBuilderScript.cs"
 -langversion:8.0
 
