@@ -9,15 +9,22 @@ public class WorldBuilderScript : MonoBehaviour
 
     #region Начальные переменные
 
-    public GameObject CameraHolder; // Объект-контейнер для камеры
+    public GameObject[] buildings; // Список строений доступных для создания
     public GameObject Cell; // Ячейка, из которых строится игровое поле
     public GameObject menu; // Меню паузы
     public static GameObject objectBuffer; // Глобальный буфер для выбранного объекта
 
-    private byte gridVer; // Размер игрового поля по вертикали
-    private byte gridHor; // Размер игрового поля по горизонтали
+    private static byte grid_Ver; // Размер игрового поля по вертикали
+    public static byte GetGrid_Ver()
+    {
+        return grid_Ver;
+    } // Доступ к чтению gridVer 
+    private static byte grid_Hor; // Размер игрового поля по горизонтали
+    public static byte GetGrid_Hor()
+    {
+        return grid_Hor;
+    } // Доступ к чтению gridHor 
 
-    private Transform CamTrans; // Хранилище трансформа держателя камеры
     private Transform Canvas; // Хранилище для трансформа канваса игрового интерфейса
     private Transform CellTransBuffer; // Буфер для трансформа последней созданной клетки
 
@@ -31,57 +38,27 @@ public class WorldBuilderScript : MonoBehaviour
     {
         // Упрощение названия трансформа канваса игрового интерфейса
         Canvas = GameObject.Find("MainCanvas").transform;
-        // Упрощение названия трансформа держателя камеры
-        CamTrans = CameraHolder.transform;
     }
 
     private void Update()
     {
-        // Проверка нажатия клавиши Escape и открытие меню паузы
-        if (GameObject.FindGameObjectWithTag("Menu") == null && Input.GetKeyDown(KeyCode.Escape))
+        // Проверка нажатия клавиши Escape
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Instantiate(menu,
-            Canvas.position,
-            Canvas.rotation,
-            parent: Canvas);
-        }
-
-        #region Передвижение камеры
-
-        // Проверка открыто ли сейчас главное меню
-        if (GameObject.Find("MainMenu") == null)
-        {
-            // Проверка наличия ввода по горизонтальной оси и того что ширина поля больше 1
-            if (Input.GetAxis("Horizontal") != 0 && gridHor > 1)
+            // Открытие меню паузы, если не открыты другие окна
+            if (GameObject.FindGameObjectWithTag("Menu") == null)
             {
-                // Перемещение камеры по горизонтальной оси
-                CamTrans.Translate(new Vector3(Input.GetAxis("Horizontal") * 0.3f, 0 , 0));
-                // Ограничение движения камеры по горизонтали в зависимости от размеров поля
-                CamTrans.position = new Vector3
-                    (
-                    Mathf.Clamp(CamTrans.position.x, 0, 10 * (gridHor - 1)),
-                    CamTrans.position.y,
-                    CamTrans.position.z
-                    );
-                    
+                Instantiate(menu,
+                Canvas.position,
+                Canvas.rotation,
+                parent: Canvas);
             }
-            // Проверка наличия ввода по вертикальной оси и того что длинна поля больше 1
-            if (Input.GetAxis("Vertical") != 0 && gridVer > 1)
+            // Закрытие других окон, если такие есть
+            else if (GameObject.FindGameObjectWithTag("Menu") != null)
             {
-                // Перемещение камеры по горизонтальной оси
-                CamTrans.Translate(new Vector3(0, 0, 0.3f * Input.GetAxis("Vertical")));
-                // Ограничение движения камеры по вертикали в зависимости от размеров поля
-                CamTrans.position = new Vector3
-                    (
-                    CamTrans.position.x,
-                    CamTrans.position.y,
-                    Mathf.Clamp(CamTrans.position.z, 90.4f, 90.4f + 10 * (gridVer - 2))
-                    );
+                CloseMenu();
             }
         }
-
-        #endregion
-
     }
 
     /// <summary>
@@ -129,22 +106,22 @@ public class WorldBuilderScript : MonoBehaviour
     public void GenerateTerrain()
     {
         // Считываем значения со слайдеров в главном меню
-        gridHor = (byte)GameObject.Find("HorSlider").GetComponent<Slider>().value;
-        gridVer = (byte)GameObject.Find("VerSlider").GetComponent<Slider>().value;
+        grid_Hor = (byte)GameObject.Find("HorSlider").GetComponent<Slider>().value;
+        grid_Ver = (byte)GameObject.Find("VerSlider").GetComponent<Slider>().value;
         // Проверяем делали ли мы уже генерацию и размер поля (все случаи кроме 1х1)
-        if (start == false && gridHor > 1 || gridVer > 1)
+        if (start == false && grid_Hor > 1 || grid_Ver > 1)
         {
             // Приписываем буферу начальное значение (в основном нужно для начального rotation)
             CellTransBuffer = gameObject.transform;
             // Закрываем главное меню
             CloseMenu();
 
-            for (byte count_1 = 1; count_1 <= gridVer; count_1++)
+            for (byte count_1 = 1; count_1 <= grid_Ver; count_1++)
             {
                 // Меняем направление генерации на четных строчках (Влево)
                 if (count_1 % 2 == 0) rlPoint = "LeftPoint";
 
-                for (byte count_2 = 1; count_2 <= gridHor; count_2++)
+                for (byte count_2 = 1; count_2 <= grid_Hor; count_2++)
                 {
                     // Создаем ячейку в нужной нам позиции относительно последней (Либо по дефолтным координатам)
                     // И записываем трансформ созданной ячейки в буфер

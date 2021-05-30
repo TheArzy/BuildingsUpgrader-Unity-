@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7745868863324479666}
   - component: {fileID: 7745868863324479663}
+  - component: {fileID: 5473428565091807253}
   - component: {fileID: 7745868863324479661}
   - component: {fileID: 7745868863324479660}
   m_Layer: 0
@@ -45,8 +46,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6322c861639e2c4c9f610678332afc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 182382, guid: 76be61eeff2e7164cb99e1cf8cf0c22b, type: 3}
+  - {fileID: 1000010315956650, guid: 1560075f917727c46a8546367a2f3132, type: 3}
   Cell: {fileID: 5523395233474340255, guid: 7bc5622d1feba2140b88f6f55cd2340f, type: 3}
   menu: {fileID: 5011407537800619372, guid: 03927bf747760b1469014b29c9215414, type: 3}
+--- !u!114 &5473428565091807253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745868863324479662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f34c70cb57dca4db62dbc320854a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraHolder: {fileID: 0}
 --- !u!33 &7745868863324479661
 MeshFilter:
   m_ObjectHideFlags: 0

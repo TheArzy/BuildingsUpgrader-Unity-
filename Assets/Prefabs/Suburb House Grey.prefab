@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 3839264858743953781, guid: 4eb2139246d6dae4cb28a9d463c06256, type: 3}
   buildinglevel: 1
-  type: 
+  type: None
 --- !u!33 &33000013210927012
 MeshFilter:
   m_ObjectHideFlags: 0
