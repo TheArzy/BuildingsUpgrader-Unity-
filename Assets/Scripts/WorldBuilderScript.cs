@@ -30,7 +30,11 @@ public class WorldBuilderScript : MonoBehaviour
 
     private bool start = false; // ‘лаг указывающий что генераци€ пол€ была проведена
     private string rlPoint = "RightPoint"; // Ќазвание метки-ориентира дл€ следующей создаваемой клетки
-    private Vector3 NextCellPos = new Vector3(0, 5, 100); //  оординаты создани€ следующей клетки
+    private Vector3 NextCellPos; //  оординаты создани€ следующей клетки
+    public void SetFirstCelPos(Vector3 FirstCellPos)
+    {
+        NextCellPos = FirstCellPos;
+    }
 
     #endregion
 
@@ -38,6 +42,13 @@ public class WorldBuilderScript : MonoBehaviour
     {
         // ”прощение названи€ трансформа канваса игрового интерфейса
         Canvas = GameObject.Find("MainCanvas").transform;
+        // ”становка точки начала генерации мира основыва€сь на координатах камеры
+        NextCellPos = new Vector3
+            (
+            GameObject.Find("CameraHolder").transform.position.x,
+            GameObject.Find("CameraHolder").transform.position.y - 25,
+            GameObject.Find("CameraHolder").transform.position.z
+            );
     }
 
     private void Update()
