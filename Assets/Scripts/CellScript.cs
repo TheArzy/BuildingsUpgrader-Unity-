@@ -15,13 +15,12 @@ public class CellScript : MonoBehaviour, IPointerClickHandler
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Открытие указанного окна в главном канвасе
-        Instantiate(menu,
-            GameObject.Find("MainCanvas").transform.position,
-            GameObject.Find("MainCanvas").transform.rotation,
-            parent: GameObject.Find("MainCanvas").transform);
-        // Запись выбранной клетки в буфер 
-        objectBuffer = gameObject;
+            // Открытие указанного окна в главном канвасе
+            Instantiate(menu,
+                GameObject.Find("MainCanvas").transform.position,
+                GameObject.Find("MainCanvas").transform.rotation,
+                parent: GameObject.Find("MainCanvas").transform);
+            // Запись выбранной клетки в буфер 
+            objectBuffer = gameObject;
     }
-
 }

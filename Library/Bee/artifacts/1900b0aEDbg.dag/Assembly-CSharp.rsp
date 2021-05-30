@@ -319,7 +319,9 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/BuildingScript.cs"
 "Assets/Scripts/ButtonActionsScript.cs"
+"Assets/Scripts/CameraMovement.cs"
 "Assets/Scripts/CellScript.cs"
+"Assets/Scripts/LookAtMe_Script.cs"
 "Assets/Scripts/WorldBuilderScript.cs"
 -langversion:8.0
 

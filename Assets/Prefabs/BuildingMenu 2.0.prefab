@@ -326,7 +326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6011402386126444029, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
+      - m_Target: {fileID: 8803149768194696588, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
         m_TargetAssemblyTypeName: ButtonActionsScript, Assembly-CSharp
         m_MethodName: SubCreate
         m_Mode: 1
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6011402386126444029, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
+      - m_Target: {fileID: 8803149768194696588, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
         m_TargetAssemblyTypeName: ButtonActionsScript, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6011402386126444029, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
+      - m_Target: {fileID: 8803149768194696588, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
         m_TargetAssemblyTypeName: ButtonActionsScript, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -1152,7 +1152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0414\u043E\u043C"
+  m_Text: "\u0414\u0435\u0440\u0435\u0432\u043E"
 --- !u!1 &3546896558022365936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,10 +1281,10 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "\u0414\u043E\u043C"
-      m_Image: {fileID: 21300000, guid: 2645217c467d8054bac341748ddd7710, type: 3}
     - m_Text: "\u0414\u0435\u0440\u0435\u0432\u043E"
       m_Image: {fileID: 21300000, guid: 27d0bc5c605abb548b8547168137e73e, type: 3}
+    - m_Text: "\u0414\u043E\u043C"
+      m_Image: {fileID: 21300000, guid: 2645217c467d8054bac341748ddd7710, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

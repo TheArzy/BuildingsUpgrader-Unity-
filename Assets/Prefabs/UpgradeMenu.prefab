@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6011402386126444029, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
+      - m_Target: {fileID: 8803149768194696588, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
         m_TargetAssemblyTypeName: ButtonActionsScript, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 1
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 3839264858525812184}
   - component: {fileID: 3839264858525812185}
   m_Layer: 5
-  m_Name: Text
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 3839264859160419663}
   - component: {fileID: 3839264859160419656}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CloseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6011402386126444029, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
+      - m_Target: {fileID: 8803149768194696588, guid: 44d092d966a1f314c995dce2e2b8d884, type: 3}
         m_TargetAssemblyTypeName: ButtonActionsScript, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
