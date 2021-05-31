@@ -122,10 +122,12 @@ public class CameraMovement : MonoBehaviour
             #region Управление клавишами
 
             // Проверка наличия ввода с клавиш управления
-            else if (Input.GetAxis("Horizontal") != 0 || 
+            else if (GameObject.Find("InputText(Clone)") == null && ( 
+                Input.GetAxis("Horizontal") != 0 || 
                 Input.GetAxis("Vertical") != 0 ||
                 Input.GetKey(KeyCode.Q) || 
-                Input.GetKey(KeyCode.E))
+                Input.GetKey(KeyCode.E)
+                ))
             {
                 // Проверка наличия ввода по горизонтальной оси и того что ширина поля больше 1
                 if (Input.GetAxis("Horizontal") != 0 && GetGrid_Hor() > 1)

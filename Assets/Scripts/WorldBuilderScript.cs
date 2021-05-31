@@ -11,6 +11,7 @@ public class WorldBuilderScript : MonoBehaviour
 
     public GameObject[] buildings; // Список строений доступных для создания
     public GameObject Cell; // Ячейка, из которых строится игровое поле
+    public GameObject RedactMenu; // Меню редактирования текста
     public GameObject menu; // Меню паузы
     public static GameObject objectBuffer; // Глобальный буфер для выбранного объекта
 
@@ -64,6 +65,10 @@ public class WorldBuilderScript : MonoBehaviour
                 Canvas.rotation,
                 parent: Canvas);
             }
+            else if (GameObject.Find("InputText(Clone)") != null)
+            {
+                CloseTextRedactor();
+            }
             // Закрытие других окон, если такие есть
             else if (GameObject.FindGameObjectWithTag("Menu") != null)
             {
@@ -73,42 +78,57 @@ public class WorldBuilderScript : MonoBehaviour
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    private static void DecorMenu()
+    {
+        // Удаление строки уровня в окне
+        GameObject.Find("BuildingLevel").GetComponent<Text>().text =
+            "";
+        // Удаление кнопки улучшения
+        Destroy(GameObject.Find("UpgradeButton"));
+    }
+
+    /// <summary>
     /// Обновление надписей в окнах и метках
     /// </summary>
-    /// <param name="type">Принимает тип зданиня</param>
-    public static void Textupdate(string type)
+    /// <param name="category">Принимает тип зданиня</param>
+    public static void TextUpdate(string category)
     {
-        // Выбор режима обновления текста в соответствии с типом строения
-        switch (type)
+        // Выбор режима обновления окна в соответствии с типом строения
+        switch (category)
         {
-            case "Tree":
-
-                // Удаление строки уровня в окне
-                GameObject.Find("BuildingLevel").GetComponent<Text>().text = 
-                    "";
-                // Удаление кнопки улучшения
-                Destroy(GameObject.Find("UpgradeButton"));
-                // Вывод соответствующего описания
-                GameObject.Find("Description").GetComponent<Text>().text = 
-                    "Самое обычное дерево\n" +
-                    "(Декорация)";
-
+            case "Description":
+                // Запись введенного текста в параметр описания строения 
+                objectBuffer.GetComponent<BuildingScript>().Description =
+                    GameObject.Find("InputField").GetComponent<InputField>().text;
+                // Закрытие окна ввода текста
+                CloseTextRedactor();
                 break;
-            case "House":
 
+            case "Decor":
+                // Настройка меню для декораций
+                DecorMenu();
+                break;
+
+            case "Building":
                 // Обновление строки уровня строения в окне
                 GameObject.Find("BuildingLevel").GetComponent<Text>().text = 
                     $"Уровень {objectBuffer.GetComponent<BuildingScript>().buildinglevel}";
                 // Обновление индикатора уровня над выбранным строением
-                objectBuffer.transform.Find("Sphere").Find("Canvas").Find("BuLe").GetComponent<Text>().text = 
+                objectBuffer.transform.Find("LevelTablet").Find("Canvas").Find("BuLe").GetComponent<Text>().text = 
                     $"{objectBuffer.GetComponent<BuildingScript>().buildinglevel}";
-                // Вывод соответствующего описания
-                GameObject.Find("Description").GetComponent<Text>().text = 
-                    "Обычный жилой дом\n" +
-                    "(Может быть улучшен)";
-
+                // Проверка на максимальный уровень
+                if (objectBuffer.GetComponent<BuildingScript>().buildinglevel == 5)
+                {
+                    // Удаление кнопки улучшения
+                    Destroy(GameObject.Find("UpgradeButton"));
+                }
                 break;
         }
+        // Обновление описания в соответствии с выбранным строением
+        GameObject.Find("Description").GetComponent<Text>().text =
+                    objectBuffer.GetComponent<BuildingScript>().Description;
     }
 
     /// <summary>

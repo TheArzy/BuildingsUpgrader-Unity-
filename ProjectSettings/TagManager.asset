@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Building
   - Menu
+  - Decor Building
   layers:
   - Default
   - TransparentFX

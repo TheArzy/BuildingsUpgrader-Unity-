@@ -24,6 +24,27 @@ public class ButtonActionsScript : MonoBehaviour
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    public static void CloseTextRedactor()
+    {
+        Destroy(GameObject.Find("InputText(Clone)"));
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void SubTextUpdate()
+    {
+        Transform parent = GameObject.Find("MainCanvas").transform;
+        Instantiate(GameObject.Find("WorldBuilder").GetComponent<WorldBuilderScript>().RedactMenu,
+            parent.position,
+            parent.rotation,
+            parent: parent
+            );
+    }
+
+    /// <summary>
     /// Улучшение здания
     /// </summary>
     public void Upgrade()
@@ -35,7 +56,7 @@ public class ButtonActionsScript : MonoBehaviour
             objectBuffer.GetComponent<BuildingScript>().buildinglevel++;
         }
         // Обновляем текст в окне и на значках
-        Textupdate("House");
+        TextUpdate("Building");
     }
 
     /// <summary>
@@ -46,6 +67,19 @@ public class ButtonActionsScript : MonoBehaviour
         // Вызов метода создания строений с номером объекта из выпадающего списка
         BuildingScript.CreateBuilding(GameObject.Find("Dropdown").GetComponent<Dropdown>().value);
         // Закрытие окна
+        CloseMenu();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void DeleteBuilding()
+    {
+        // Активация коллайдера клетки
+        objectBuffer.GetComponent<BuildingScript>().myCell.GetComponent<Collider>().enabled = true;
+        // Уничтожение выбранного строения
+        Destroy(objectBuffer);
+        // Закрытие меню
         CloseMenu();
     }
 }
