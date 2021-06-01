@@ -1283,9 +1283,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: "\u0414\u0435\u0440\u0435\u0432\u043E"
       m_Image: {fileID: 0}
-    - m_Text: "\u0414\u043E\u043C"
+    - m_Text: "\u0414\u043E\u043C (\u0422\u0438\u043F 1)"
       m_Image: {fileID: 0}
     - m_Text: "\u0412\u044B\u0441\u043E\u0442\u043A\u0430"
+      m_Image: {fileID: 0}
+    - m_Text: "\u0414\u043E\u043C (\u0422\u0438\u043F 2)"
+      m_Image: {fileID: 0}
+    - m_Text: "\u0414\u043E\u043C (\u0422\u0438\u043F 3)"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

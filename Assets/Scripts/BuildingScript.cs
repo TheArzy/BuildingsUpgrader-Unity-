@@ -87,12 +87,22 @@ public class BuildingScript : MonoBehaviour, IPointerClickHandler
 
             case 1:
                 BuildInst(1, "House", "House", "Building",
-                    "Обычный жилой дом\n");
+                    "Обычный жилой дом");
                 break;
 
             case 2:
                 BuildInst(2, "TallBuilding", "TallBuilding", "Building",
-                    "Многоэтажный дом\n");
+                    "Многоэтажный дом");
+                break;
+
+            case 3:
+                BuildInst(3, "PinkHouse", "PinkHouse", "Building",
+                    "Обычный жилой дом");
+                break;
+
+            case 4:
+                BuildInst(4, "BlueHouse", "BlueHouse", "Building",
+                    "Обычный жилой дом");
                 break;
         }
         // Отключаем коллайдер ячейки чтобы предотвратить повторное открытие окна создания строений

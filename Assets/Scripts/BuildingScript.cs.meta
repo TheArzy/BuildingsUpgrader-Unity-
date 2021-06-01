@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - myCell: {fileID: 5523395233474340255, guid: 7bc5622d1feba2140b88f6f55cd2340f, type: 3}
+  - myCell: {instanceID: 0}
   - menu: {fileID: 3839264858743953781, guid: 4eb2139246d6dae4cb28a9d463c06256, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

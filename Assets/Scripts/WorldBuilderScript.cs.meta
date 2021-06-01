@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - Cell: {fileID: 5523395233474340255, guid: 7bc5622d1feba2140b88f6f55cd2340f, type: 3}
+  - RedactMenu: {fileID: 2682402015196926928, guid: 5f2caea3ec3e35e4d8bbf7bec05eab06, type: 3}
   - menu: {fileID: 5011407537800619372, guid: 03927bf747760b1469014b29c9215414, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
