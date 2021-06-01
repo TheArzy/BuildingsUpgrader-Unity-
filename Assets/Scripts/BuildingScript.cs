@@ -6,9 +6,14 @@ using static WorldBuilderScript;
 
 public class BuildingScript : MonoBehaviour, IPointerClickHandler
 {
+    public string Name = "Name_None"; // Название здания
+    public string Type = "Type_None"; // Тип данного строения
+    public string Category = "Cat_None"; // Категория данного строения
+    public string Description = "Descr_None"; // Описание строения
+
+    public GameObject myCell; // Хранилище данных о клетке, на которой стоит строение
     public GameObject menu; // Меню, вызываемое при нажатии на коллайдер объекта
     public byte buildinglevel = 1; // Уровень данного строения
-    private string type = "None"; // Тип данного строения
 
     /// <summary>
     /// Открытие соответствующего окна свойств\улучшения при нажатии на коллайдер строения
@@ -24,8 +29,46 @@ public class BuildingScript : MonoBehaviour, IPointerClickHandler
             parent: GameObject.Find("MainCanvas").transform);
         // Запись выбранного строения в буфер 
         objectBuffer = gameObject;
-        // Обновление текста в окне в соответствии с типом строения
-        Textupdate(type);
+        // Обновление текста в окне в соответствии с выбранным строением
+        TextUpdate(Category);
+    }
+
+    /// <summary>
+    /// Создание указанного строения с указанными параметрами
+    /// </summary>
+    /// <param name="index">Номер строения в списке</param>
+    /// <param name="name">Имя</param>
+    /// <param name="type">Тип</param>
+    /// <param name="category">Категория</param>
+    /// <param name="description">Описание</param>
+    public static void BuildInst(
+        byte index, string name, string type, 
+        string category, string description)
+    {
+        // Буфер для созданного нами строения
+        GameObject buffer;
+        // Буфер для массива доступных строений
+        GameObject[] comp = GameObject.Find("WorldBuilder").GetComponent<WorldBuilderScript>().buildings;
+
+        // Создаем и запоминаем строение
+        buffer = Instantiate(comp[index], objectBuffer.transform.position, comp[index].transform.rotation);
+
+        // Приписываем созданному строению его имя
+        buffer.GetComponent<BuildingScript>().Name =
+            name;
+        // Приписываем созданному строению его тип
+        buffer.GetComponent<BuildingScript>().Type =
+            type;
+        // Приписываем созданному строению его категорию
+        buffer.GetComponent<BuildingScript>().Category =
+            category;
+        // Приписываем созданному строению соответствующее описание
+        buffer.GetComponent<BuildingScript>().Description =
+            description;
+
+        // Записываем строению данные о ячейке, на которой оно стоит
+        buffer.GetComponent<BuildingScript>().myCell =
+            objectBuffer;
     }
 
     /// <summary>
@@ -34,24 +77,32 @@ public class BuildingScript : MonoBehaviour, IPointerClickHandler
     /// <param name="value">Номер строения в выпадаеющем списке</param>
     public static void CreateBuilding(int value)
     {
-        // Буфер для созданного нами строения
-        GameObject buffer;
-        // Буфер для массива доступных строений
-        GameObject[] comp = GameObject.Find("WorldBuilder").GetComponent<WorldBuilderScript>().buildings;
-        // Выбор строения для создания в соответствии с значением выпадающего списка
         switch (value)
         {
             case 0:
-                // Запоминаем созданное строение
-                buffer = Instantiate(comp[0], objectBuffer.transform.position, comp[0].transform.rotation);
-                // Приписываем созданному строению его тип
-                buffer.GetComponent<BuildingScript>().type = "Tree";
+                BuildInst(0, "Tree", "PineTree", "Decor",
+                    "Самое обычное дерево\n" +
+                    "(Декорация)");
                 break;
+
             case 1:
-                // Запоминаем созданное строение
-                buffer = Instantiate(comp[1], objectBuffer.transform.position, comp[1].transform.rotation);
-                // Приписываем созданному строению его тип
-                buffer.GetComponent<BuildingScript>().type = "House";
+                BuildInst(1, "House", "House", "Building",
+                    "Обычный жилой дом");
+                break;
+
+            case 2:
+                BuildInst(2, "TallBuilding", "TallBuilding", "Building",
+                    "Многоэтажный дом");
+                break;
+
+            case 3:
+                BuildInst(3, "PinkHouse", "PinkHouse", "Building",
+                    "Обычный жилой дом");
+                break;
+
+            case 4:
+                BuildInst(4, "BlueHouse", "BlueHouse", "Building",
+                    "Обычный жилой дом");
                 break;
         }
         // Отключаем коллайдер ячейки чтобы предотвратить повторное открытие окна создания строений

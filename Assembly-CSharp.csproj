@@ -69,6 +69,7 @@
   <ItemGroup>
     <None Include="Assets\BrokenVector\LowPolyTreePack\README.txt" />
     <None Include="Assets\Low Poly Buildings Lite\ReadMe.txt" />
+    <None Include="Assets\Simple city plain\Read_me.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
